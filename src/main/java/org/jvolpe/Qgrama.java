@@ -17,7 +17,7 @@ public class Qgrama<T> implements Iterable<T> {
     }
 
     // Clase anidada que itera sobre los Q-gramas
-    private class Part implements Iterator<String> {
+    private class Part<T> implements Iterator<String> {
         private int currentIndex = 0;
 
         @Override
@@ -38,7 +38,7 @@ public class Qgrama<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return (Iterator<T>) new Part();
+        return new Part();
     }
 
     @Override
